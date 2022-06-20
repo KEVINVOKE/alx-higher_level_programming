@@ -2,7 +2,7 @@
 # 102-magic_calculation.py
 
 def magic_calculation(a, b):
-    res = 0
+    result = 0
     for i in range(1, 3):
         try:
             if (i > a):
@@ -12,4 +12,4 @@ def magic_calculation(a, b):
         except:
             res = b + a
             break
-    return res
+    return (result)
