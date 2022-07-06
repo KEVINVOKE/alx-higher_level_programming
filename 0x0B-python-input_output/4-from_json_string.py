@@ -1,11 +1,23 @@
 #!/usr/bin/python3
-"""From JSON string to Object"""
-import json
+"""Search and update"""
 
 
-def from_json_string(my_str):
-    """Return the Python object representation of a
-    JSON string.
+def append_after(filename="", search_string="", new_string=""):
+    """Inserts text after each line containing 
+    a given string in a file.
+
+    Args:
+        filename (str): The name of the file.
+        search_string (str): The string to search 
+        for within the file.
+        new_string (str): The string to insert.
 
     """
-    return json.loads(my_str)
+    text = ""
+    with open(filename) as r:
+        for line in r:
+            text += line
+            if search_string in line:
+                text += new_string
+    with open(filename, "w") as w:
+        w.write(text)
